@@ -1,11 +1,10 @@
-name: Data validation
-on: 
+name: Test data preparation
+on:
   push:
     branches:
-      - 'f/data-validation'
-
+      - "f/data-preparation"
 jobs:
-  data-validation:
+  data-preparation:
     runs-on: ubuntu-18.04
     env:
       MONGODB_USER: ${{ secrets.MONGODB_USER }}
@@ -22,12 +21,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install scikit-learn
-
       - name: Login wandb
         run: wandb login ${{ secrets.WANDB_KEY}}
-      - name: test data validation
+      - name: Test pipeline
         run: |
           export PYTHONPATH=.
-          python3 ml_core/test/data-validation.py
-          
+          python3 ml_core/test/data-preparation.py
