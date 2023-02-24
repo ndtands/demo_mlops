@@ -1,8 +1,8 @@
-from ml_core import data_validation
+from ml_core import training
 from configs.config import logger
 from decouple import config
 
 if __name__ == '__main__':
     PROJECT_NAME = config('PROJECT_NAME')
-    data_validation.validate_data(project=PROJECT_NAME)
-    logger.info('Validation Done')
+    training.train(project=PROJECT_NAME, is_test = True)
+    logger.info('Training + Tuning Done')

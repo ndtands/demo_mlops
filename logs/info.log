@@ -7,3 +7,15 @@ Done in  34.0134 s
 ERROR 2022-06-12 20:10:23,571 [threader.py:main:67]
 Thread err
 
+ERROR 2023-02-24 13:17:44,411 [jupyter.py:notebook_metadata:232]
+Failed to detect the name of this notebook, you can set it manually with the WANDB_NOTEBOOK_NAME environment variable to enable code saving.
+
+INFO 2023-02-24 13:17:57,669 [1233294126.py:<module>:16]
+Data extract Done
+
+INFO 2023-02-24 13:19:36,145 [2114753310.py:<module>:16]
+Data extract Done
+
+ERROR 2023-02-24 13:25:47,751 [jupyter.py:notebook_metadata:232]
+Failed to detect the name of this notebook, you can set it manually with the WANDB_NOTEBOOK_NAME environment variable to enable code saving.
+
