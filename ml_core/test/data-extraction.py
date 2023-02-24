@@ -14,5 +14,4 @@ if __name__ == '__main__':
     db=client[DATASOURCE]
     collection_post = db.data
     df = data_extraction.extract_data(project=PROJECT_NAME, collection=collection_post)
-    print(len(df))
     logger.info("Data extract Done")

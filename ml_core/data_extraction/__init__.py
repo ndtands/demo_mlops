@@ -11,6 +11,7 @@ def fetch_data(collection: pymongo.collection.Collection):
 
     # Convert jsonl to dataframe
     df = pd.json_normalize(list_json)
+    print("Size of dataset: ",len(df))
     return df
 
 def extract_data(project: str, collection: pymongo.collection.Collection):
