@@ -11,6 +11,7 @@ jobs:
       MONGODB_USER: ${{ secrets.MONGODB_USER }}
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       DATASOURCE: ${{ secrets.DATASOURCE }}
+      PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
