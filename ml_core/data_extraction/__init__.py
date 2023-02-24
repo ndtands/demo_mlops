@@ -1,7 +1,8 @@
-from pymongo import MongoClient
 import pymongo
 import pandas as pd
 import wandb
+import random
+import string
 
 def fetch_data(collection: pymongo.collection.Collection):
     list_json = []
@@ -13,7 +14,8 @@ def fetch_data(collection: pymongo.collection.Collection):
     return df
 
 def extract_data(project: str, collection: pymongo.collection.Collection):
-    run = wandb.init(project=project, job_type="data-extraction")
+    random_string = ''.join(random.choices(string.ascii_lowercase + string.digits, k=6))
+    run = wandb.init(project=project, job_type="data-extraction", name='data-extraction'+random_string)
 
     # Create a sample dataset to log as an artifact
     df = fetch_data(collection=collection)
