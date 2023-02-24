@@ -34,7 +34,7 @@ def infer_schema(project: str, artifact_name='raw-dataset:latest', filename='raw
     df['_class'] = df._class.apply(lambda x: x if x in _CLASS else 'other')
     
 
-    train_df, test_df = train_test_split(df, train_size=0.9, shuffle=True, random_state=43, stratify=df['branch'])
+    train_df, test_df = train_test_split(df, train_size=0.9, shuffle=True, random_state=43)
     train_stats = tfdv.generate_statistics_from_dataframe(dataframe=train_df)
     schema = tfdv.infer_schema(statistics=train_stats)
     schema_df_result = tfdv.utils.display_util.get_schema_dataframe(schema=schema)
