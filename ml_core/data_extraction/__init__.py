@@ -15,8 +15,7 @@ def fetch_data(collection: pymongo.collection.Collection):
     return df
 
 def extract_data(project: str, collection: pymongo.collection.Collection):
-    random_string = ''.join(random.choices(string.ascii_lowercase + string.digits, k=6))
-    run = wandb.init(project=project, job_type="data-extraction", name='data-extraction_'+random_string)
+    run = wandb.init(project=project, job_type="data-extraction")
 
     # Create a sample dataset to log as an artifact
     df = fetch_data(collection=collection)
