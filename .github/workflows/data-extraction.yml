@@ -1,0 +1,30 @@
+name: Data extraction
+on: 
+  push:
+    branches:
+      - 'f/data-extraction'
+
+jobs:
+  data-extraction:
+    runs-on: ubuntu-18.04
+    env:
+      MONGODB_USER: ${{ secrets.MONGODB_USER }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+      DATASOURCE: ${{ secrets.DATASOURCE }}
+      PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.6'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Login wandb
+        run: wandb login ${{ secrets.WANDB_KEY}} 
+      - name: test data extraction
+        run: |
+          export PYTHONPATH=.
+          python3 ml_core/test/data-extraction.py

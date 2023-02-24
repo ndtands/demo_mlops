@@ -1,0 +1,9 @@
+datefinder==0.7.1
+tqdm==4.64.0
+rich==12.4.4
+pymongo[srv]
+requests
+bs4
+python-decouple
+pandas
+wandb
