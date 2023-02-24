@@ -1,5 +1,7 @@
 name: Crawl dataset
 on: 
+  schedule:
+    - cron: '0 5 * * *'
   push:
     branches:
       - 'f/crawl'
