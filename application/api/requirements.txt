@@ -1,0 +1,5 @@
+pandas==1.1.5
+wandb==0.12.17
+sklearn
+category-encoders==2.5.0
+fastapi[all]
