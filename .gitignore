@@ -1,3 +1,5 @@
 /wandb
 /*/__pycache__
 /artifacts
+application/api/artifacts
+application/api/wandb
