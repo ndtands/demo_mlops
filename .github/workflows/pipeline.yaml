@@ -2,9 +2,9 @@ name: ML Pipeline
 on:
   repository_dispatch:
     types: [train]
-  push:
-    branches:
-      - 'master'
+#   push:
+#     branches:
+#       - 'master'
 jobs:
   Pipeline:
     runs-on: ubuntu-18.04
